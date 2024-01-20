@@ -28,8 +28,9 @@ function App() {
             {sessionStorage.getItem("access_token") || user ? (<>
               <Route path="/" element={<Main />} errorElement={<ErrorPage />}>
                 <Route index element={<PagePost />} />
-                <Route path="todo" element={<PageTodos />}>
-                  <Route path=":id" element={<>todo by id</>} />
+                <Route path="todo" element={<Outlet />}>
+                  <Route index element={<PageTodos />} />
+                  {/* <Route path=":id" element={<>Get single todo</>} /> */}
                 </Route>
                 <Route path="users" element={<Outlet />}>
                   <Route index element={<PageUsers />} />

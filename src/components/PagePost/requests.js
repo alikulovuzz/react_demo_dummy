@@ -16,7 +16,7 @@ export const createPostReq = (url, data, successfulFunction, errorFunction) => {
 }
 
 export const updatePostReq = (url, data, successfulFunction, errorFunction) => {
-    axios.post(
+    axios.patch(
         url,
         data,
         {
